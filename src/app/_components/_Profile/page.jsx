@@ -20,8 +20,9 @@ const Profile = ({ userData }) => {
   }, [userData]);
 
   return (
-    <div className='mt-40'>
-      <div>
+    <div className='mt-36 bg-[#20293A] w-full h-screen'>
+      <div className='flex'>
+        <div className='ml-16'>
         {userData?.avatar_url ? (
           <img
             src={userData.avatar_url}
@@ -37,6 +38,7 @@ const Profile = ({ userData }) => {
             />
           )
         )}
+        </div>
         <ProfileData userData={userData || githubInfo} /> {/* Pass the appropriate data to ProfileData */}
       </div>
     </div>
