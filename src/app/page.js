@@ -1,17 +1,17 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Profile from "./_components/_Profile/page";
 import SearchBar from "./_components/_SearchBar/page";
 import { getInfo } from "./_utils/getInfo";
-
+import debounce from "lodash.debounce";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState(""); 
   const [userData, setUserData] = useState({}); // Add state to store user data
 
-  const handleSearchTermChange = (newSearchTerm) => {
+  const handleSearchTermChange = useCallback(debounce((newSearchTerm) => {
     setSearchTerm(newSearchTerm);
-  };
+  }, 1000), []);
 
   useEffect(() => {
     if (searchTerm) {
