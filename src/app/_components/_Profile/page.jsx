@@ -11,6 +11,7 @@ const Profile = ({ userData }) => {
         const response = await fetch(`https://api.github.com/users/${username}`);
         const data = await response.json();
         setGithubInfo(data);
+        console.log(data);
       } catch (error) {
         console.log('Error fetching GitHub data:', error);
       }
@@ -19,27 +20,27 @@ const Profile = ({ userData }) => {
     fetchGithubInfo();
   }, [userData]);
 
+  const profileData = userData?.username ? userData : githubInfo;
+
   return (
     <div className='mt-36 bg-[#20293A] w-full h-screen'>
       <div className='flex'>
         <div className='ml-16'>
-        {userData?.avatar_url ? (
-          <img
-            src={userData.avatar_url}
-            alt="User Avatar"
-            className='size-28 rounded-2xl mt-[-60px] border-8 border-[#20293A]'
-          />
-        ) : (
-          githubInfo.avatar_url && (
+          {profileData.avatar_url ? (
+            <img
+              src={profileData.avatar_url}
+              alt="User Avatar"
+              className='size-28 rounded-2xl mt-[-60px] border-8 border-[#20293A]'
+            />
+          ) : (
             <img
               src={githubInfo.avatar_url}
               alt="GitHub User Avatar"
               className='size-28 rounded-2xl mt-[-60px] border-8 border-[#20293A]'
             />
-          )
-        )}
+          )}
         </div>
-        <ProfileData userData={userData || githubInfo} /> {/* Pass the appropriate data to ProfileData */}
+        <ProfileData userData={profileData} />
       </div>
     </div>
   );
