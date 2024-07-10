@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProfileData from './_components/_ProfileData/ProfileData';
+import Repositories from './_components/_Repositories/page';
 
 const Profile = ({ userData }) => {
   const [githubInfo, setGithubInfo] = useState({});
@@ -42,6 +43,7 @@ const Profile = ({ userData }) => {
         </div>
         <ProfileData userData={profileData} />
       </div>
+        <Repositories userData={profileData}/>
     </div>
   );
 };
