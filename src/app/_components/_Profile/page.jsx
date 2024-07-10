@@ -27,14 +27,14 @@ const Profile = ({ userData }) => {
           <img
             src={userData.avatar_url}
             alt="User Avatar"
-            className='size-28 rounded-2xl'
+            className='size-28 rounded-2xl mt-[-60px] border-8 border-[#20293A]'
           />
         ) : (
           githubInfo.avatar_url && (
             <img
               src={githubInfo.avatar_url}
               alt="GitHub User Avatar"
-              className='size-28 rounded-2xl'
+              className='size-28 rounded-2xl mt-[-60px] border-8 border-[#20293A]'
             />
           )
         )}
