@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import MITIcon from "../../../../../../public/Chield_alt.svg"
+import Image from 'next/image';
 
 const Repositories = ({ userData }) => {
   const [repos, setRepos] = useState([]);
@@ -21,6 +23,20 @@ const Repositories = ({ userData }) => {
           <div>
             <h4 key={repo.id} className='text-title'>{repo.name}</h4>
             <p key={repo.id} className='text-[#CDD5E0] font-extralight text-body'>{repo.description}</p>
+            <div>
+              <span >{repo.license &&
+                <div className='flex flex-row'>
+                  <Image
+                  width={24}
+                  height={24}
+                  src={MITIcon}
+                  alt='MIT License'
+                />
+                  <p>MIT</p>
+                </div>
+                }
+              </span>
+            </div>
           </div>
         ))}
       </ul>
