@@ -12,7 +12,7 @@ const SearchBar = ({ onSearchTermChange }) => {
   }
 
   return (
-    <div className='relative mt-8 rounded-xl bg-[#20293A] h-14 w-3/4 items-center'>
+    <div className='relative mt-8 rounded-xl bg-[#20293A] h-14 w-3/4 md:w-5/12 items-center'>
       <div className='absolute left-0 top-0 h-full flex items-start pl-4 mt-2 pt-2'>
         <Image 
           width={24}

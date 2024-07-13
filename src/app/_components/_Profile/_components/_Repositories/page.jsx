@@ -25,8 +25,6 @@ const Repositories = ({ userData }) => {
     return daysDifference;
   };
 
-  console.log(userData)
-
   return (
     <div className='bg-[#20293A]'>
       <h2 className='text-large mt-8 ml-16'>

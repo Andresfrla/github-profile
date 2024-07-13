@@ -26,7 +26,7 @@ const Profile = ({ userData }) => {
 
   const profileData = userData?.username ? userData : githubInfo;
 
-  console.log(profileData)
+
   return (
     <div className='mt-36 bg-[#20293A] w-full h-screen'>
       <div className='flex'>
@@ -37,7 +37,7 @@ const Profile = ({ userData }) => {
             <img
               src={profileData.avatar_url || githubInfo.avatar_url}
               alt="User Avatar"
-              className='size-28 rounded-2xl mt-[-60px] border-8 border-[#20293A]'
+              className='size-[120px] rounded-2xl mt-[-60px] border-8 border-[#20293A]'
             />
           )}
         </div>
