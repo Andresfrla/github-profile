@@ -33,14 +33,14 @@ const Repositories = ({ userData }) => {
         </a>
       </h2>
       <p className='text-[#CDD5E0] font-extralight text-title ml-16 mt-3'>{userData.bio}</p>
-      <ul>
+      <ul className='md:grid md:grid-cols-2 md:mx-10'>
         {loading ? (
-          Array.from({ length: 5 }).map((_, index) => (
+          Array.from({ length: 4 }).map((_, index) => (
             <Skeleton key={index} />
           ))
         ) : (
-          repos.slice(0, 5).map(repo => (
-            <div key={repo.id} className='bg-gradient-to-r from-[#121729] to-[#1D1B47] mt-9 p-5 mx-12 rounded-xl space-y-6'>
+          repos.slice(0, 4).map(repo => (
+            <div key={repo.id} className='bg-gradient-to-r from-[#121729] to-[#1D1B47] mt-9 p-5 md:mx-4 mx-12 rounded-xl space-y-6'>
               <h4 className='text-title'>
                 <a href={repo.html_url}>
                   {repo.name}
