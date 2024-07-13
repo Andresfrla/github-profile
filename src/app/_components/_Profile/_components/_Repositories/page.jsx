@@ -27,7 +27,7 @@ const Repositories = ({ userData }) => {
       <p className='text-[#CDD5E0] font-extralight text-title ml-16 mt-3'>{userData.bio}</p>
       <ul>
         {repos.slice(0, 5).map(repo => (
-          <div key={repo.id}  className='bg-gradient-to-r from-[#121729] to-[#1D1B47] mt-9 p-5 mx-12 rounded-xl space-y-6'>
+          <div key={repo.id} className='bg-gradient-to-r from-[#121729] to-[#1D1B47] mt-9 p-5 mx-12 rounded-xl space-y-6'>
             <h4 className='text-title'>{repo.name}</h4>
             <p className='text-[#CDD5E0] font-extralight text-body'>{repo.description}</p>
             <div>
@@ -63,7 +63,7 @@ const Repositories = ({ userData }) => {
                 </div>
                 <div className='flex flex-row font-light text-[#919DB1]'>
                   <p>
-                    updated {calculateDaysSinceUpdate(repo.updated_at)} day ago
+                    updated {calculateDaysSinceUpdate(repo.updated_at)} days ago
                   </p>
                 </div>
               </span>
@@ -71,9 +71,15 @@ const Repositories = ({ userData }) => {
           </div>
         ))}
       </ul>
+      <div className='flex justify-center mt-8'>
+        <a href={`https://github.com/${userData.login}?tab=repositories`} className='text-[#919DB1] mb-20 mt-5 hover:underline'>
+          View all repositories
+        </a>
+      </div>
     </div>
   );
 };
 
 export default Repositories;
+
 

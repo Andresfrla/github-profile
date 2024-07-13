@@ -8,11 +8,10 @@ const Profile = ({ userData }) => {
   useEffect(() => {
     const fetchGithubInfo = async () => {
       try {
-        const username = userData?.username || 'github'; // Reemplaza 'github' con un usuario por defecto o maneja el caso apropiadamente
+        const username = userData?.login || 'github'; // Reemplaza 'github' con un usuario por defecto o maneja el caso apropiadamente
         const response = await fetch(`https://api.github.com/users/${username}`);
         const data = await response.json();
         setGithubInfo(data);
-        console.log(data);
       } catch (error) {
         console.log('Error fetching GitHub data:', error);
       }
